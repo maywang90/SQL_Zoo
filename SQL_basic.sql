@@ -1,7 +1,7 @@
 --1. Show the population of Germany
 
 SELECT population FROM world
-  WHERE name = 'Germany';
+  WHERE name = 'germany';
 
 --2. Show the name and per capita gdp: gdp/population for each country where the area is over 5,000,000 km2
 
