@@ -19,8 +19,11 @@ SELECT name , continent
 SELECT name, population FROM world
   WHERE name IN ('Finland', 'Norway',
                  'Denmark', 'Sweden');
-
---5. Show each country that begins with G
+--5. Show the name and the population for 'Ireland', 'Iceland' and 'Denmark'.
+SELECT name, population FROM world
+  WHERE name IN ('ireland', 'iceland', 'denmark');
+  
+--6. Show each country that begins with G
 
 SELECT name FROM world
   WHERE name LIKE 'G%';
@@ -29,3 +32,7 @@ SELECT name FROM world
 
 SELECT name, area/1000 FROM world
   WHERE area BETWEEN 200000 AND 250000;
+
+--7. show the country and the area for countries with an area between 200,000 and 250,000.
+SELECT name, area FROM world
+  WHERE area BETWEEN 200000 AND 250000
