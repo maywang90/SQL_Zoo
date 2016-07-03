@@ -9,7 +9,8 @@ WHERE population>200000000;
 
 --3. Give the name and the per capita GDP for those countries with a population of at least 200 million.
 
-SELECT name, gdp/population FROM world WHERE population>200000000;
+SELECT name, gdp/population as per_capital_GDP from world
+WHERE population>=200000000;
 
 --4. Show the name and population in millions for the countries of the continent 'South America'.
 
@@ -30,6 +31,8 @@ SELECT name, population, area FROM world WHERE area > 3000000 OR population > 25
 --8. Show the countries that are big by area or big by population but not both. Show name, population and area.
 
 SELECT name, population, area FROM world WHERE (area > 3000000 AND population < 250000000) OR (population > 250000000 AND area < 3000000);
+
+SELECT name, population, area from world WHERE area>3000000 XOR population>250000000
 
 --9. For South America show population in millions and GDP in billions to 2 decimal places.
 
