@@ -38,3 +38,7 @@ SELECT continent, name FROM world x WHERE name <= ALL(SELECT name FROM world y W
 
 SELECT name, continent, population FROM world WHERE continent IN (SELECT continent FROM world  x WHERE 25000000 >= (SELECT MAX(population) FROM world y WHERE x.continent = y.continent));
 
+--10. Some countries have populations more than three times that of any of their neighbours (in the same continent). Give the countries and continents.
+
+SELECT name, continent FROM world
+WHERE name IN(SELECT name from world x WHERE population/3>ALL(SELECT population FROM world y WHERE y.continent=x.continent and y.name!=x.name));
