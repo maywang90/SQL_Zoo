@@ -29,3 +29,7 @@ SELECT continent, COUNT(*) FROM world WHERE population >= 10000000 GROUP BY cont
 
 SELECT continent FROM world x WHERE (SELECT SUM(population) FROM world y WHERE x.continent = y.continent) >= 100000000 GROUP BY continent;
 
+SELECT continent
+FROM world
+GROUP BY continent
+HAVING sum(population)>=100000000
