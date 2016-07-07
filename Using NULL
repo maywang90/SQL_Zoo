@@ -5,8 +5,8 @@ SELECT teacher.name FROM teacher WHERE dept IS NULL;
 --2. Note the INNER JOIN misses the teachers with no department and the departments with no teacher.
 
 SELECT teacher.name, dept.name
- FROM teacher JOIN dept
-           ON (teacher.dept=dept.id);
+FROM teacher JOIN dept
+ON (teacher.dept=dept.id);
 
 --3. Use a different JOIN so that all teachers are listed.
 
@@ -26,7 +26,7 @@ SELECT teacher.name, COALESCE(dept.name, 'None') AS department FROM teacher LEFT
 
 --7. Use COUNT to show the number of teachers and the number of mobile phones.
 
-SELECT COUNT(teacher.name), COUNT(mobile) FROM teacher;
+SELECT COUNT(name), COUNT(mobile) FROM teacher;
 
 --8. Use COUNT and GROUP BY dept.name to show each department and the number of staff. Use a RIGHT JOIN to ensure that the Engineering department is listed.
 
